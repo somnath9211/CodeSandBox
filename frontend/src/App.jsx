@@ -3,6 +3,7 @@ import './App.css'
 import { pingApi } from './apis/ping'
 import { Route, Routes } from 'react-router-dom';
 import CreateProject from './pages/createProject.jsx';
+import Templates from './pages/createProject.jsx';
 
 function App() {
 
@@ -11,7 +12,7 @@ function App() {
   }, [])
   return (
     <Routes>
-      <Route path='/' element={<CreateProject />} />
+      <Route path='/' element={<Templates />} />
     </Routes>
   )
 }

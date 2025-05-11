@@ -1,16 +1,20 @@
-import React from "react";
+import React, { use } from "react";
 import { useCreateProject } from "../hooks/apis/mutations/useCreateProject";
 import { FaAngular, FaReact, FaHtml5 } from "react-icons/fa";
 import { SiNextdotjs, SiAstro, SiSvelte } from "react-icons/si";
+import { useNavigate } from "react-router-dom";
 
-const Templates = () => {
+const CreateProject = () => {
     const { createProjectMutation, isPending } = useCreateProject();
+
+    const navigate = useNavigate();
 
     async function handleCreateProject() {
         console.log("Creating project...");
         try {
-            await createProjectMutation();
+            const response = await createProjectMutation();
             console.log("Project created successfully:");
+            navigate(`/project/${response.data}`);
         } catch (error) {
             console.error("Error creating project:", error);
         }
@@ -130,4 +134,4 @@ const Templates = () => {
     );
 };
 
-export default Templates;
+export default CreateProject;

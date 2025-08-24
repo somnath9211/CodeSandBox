@@ -59,7 +59,7 @@ editorNamespace.on('connection', (socket) => {
         });
     }
 
-    handleEditorSocketEvents(socket);
+    handleEditorSocketEvents(socket, editorNamespace);
 
     // socket.on('disconnect', async () => {
     //     console.log('User disconnected from /editor namespace:', socket.id);

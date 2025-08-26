@@ -6,6 +6,7 @@ import { useEffect } from "react";
 import { useTreeStructureStore } from "../store/treeStuctureStore";
 import { useEditorSocketStore } from "../store/editorSocketStore";
 import { io } from "socket.io-client";
+import BrowserTerminal from "../components/molecules/BrowserTerminal/BrowserTerminal";
 
 const ProjectPlayground = () => {
     const { projectId: projectIdFromUrl } = useParams();
@@ -49,6 +50,9 @@ const ProjectPlayground = () => {
                     {/* Editor Content */}
                     <div className="flex-1 p-0">
                         <EditorComponent />
+                        <div>
+                            <BrowserTerminal />
+                        </div>
                     </div>
                 </main>
             </div>
